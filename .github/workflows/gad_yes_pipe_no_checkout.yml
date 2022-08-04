@@ -1,7 +1,7 @@
-name: GAD PIPE
+name: GAD YES PIPE NO CHECKOUT
 on: pull_request
 jobs:
-  Pipe:
+  yes_pipe_no_chkout:
     runs-on: ubuntu-latest
     steps:
       - run: |

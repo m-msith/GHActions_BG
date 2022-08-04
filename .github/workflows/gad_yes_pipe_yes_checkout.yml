@@ -1,7 +1,7 @@
-name: GAD PIPE
+name: GAD YES PIPE YES CHECKOUT
 on: pull_request
 jobs:
-  Pipe_chkout:
+  yes_pipe_yes_chkout:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
