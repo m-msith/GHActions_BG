@@ -1,11 +1,9 @@
 name: GAD NO PIPE
 on: pull_request
 jobs:
-  No-Pipe:
+  No-Pipe_no_chkout:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v3
       - run: title="${{ github.event.pull_request.title }}"
       - run: echo $title
         

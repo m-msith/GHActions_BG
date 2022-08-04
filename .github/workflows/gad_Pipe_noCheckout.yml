@@ -1,11 +1,9 @@
 name: GAD PIPE
 on: pull_request
 jobs:
-  Pipe_chkout:
+  Pipe:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v3
       - run: |
           title="${{ github.event.pull_request.title }}"
           echo $title
