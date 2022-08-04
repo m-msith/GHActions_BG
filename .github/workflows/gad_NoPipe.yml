@@ -1,0 +1,10 @@
+name: GAD NO PIPE
+on: pull_request
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: title="${{ github.event.pull_request.title }}"
+      - run: echo $title
+        
+
