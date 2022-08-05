@@ -1,0 +1,35 @@
+name: GitHub Actions Injection Test
+on: pull_request
+jobs:
+  multiline_whitespace_test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{  github.event.pull_request.title  }}"
+      - run: echo "${{github.event.pull_request.title}}"
+      - name: Test Multiline
+        run: |
+          title="${{ github.event.pull_request.title }}"
+          echo $title
+      - name: Test Singleline
+        run: echo "${{ github.event.pull_request.title }}"
+      - run: |
+          title="${{ github.event.pull_request.title }}"
+          echo $title
+      - run: >
+          title="${{ github.event.pull_request.title }}"
+          echo $title
+        
+  multijob_multievent_test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ github.event.commit_comment.body }}"
+      - run: echo "${{ github.event.label.default_branch }}"
+      - run: echo "${{ github.event.push.email }}"
+      - run: echo "${{ github.event.merge_group.head_ref }}"
+      - run: echo "${{ github.event.pull_request.label }}"
+      - run: echo "${{ github.event.status.message }}"      
+      - run: echo "${{ github.event.release.name }}"
+      - run: echo "${{ github.event.gollum.page_name }}"
+      - run: echo "${{ github.event.push.ref }}"
+      - run: echo "${{ github.event.pull_request.title }}"
+
